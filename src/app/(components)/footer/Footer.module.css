@@ -1,0 +1,82 @@
+.footerContainer { 
+    height: 6%;
+    width: 100%; 
+    bottom: 0px;
+    position: absolute;
+    background-color: #212529;
+    z-index: 1;
+  }
+  
+.social{
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin: 1%;
+    width: 5%;
+}
+
+.bottomRightsText{
+    color: silver;
+    float: left;
+    margin: 1%;
+    width: 60%;
+    font-size: 85%;
+}
+
+.lpLink{
+    text-decoration: none; 
+    color: silver;
+    font-weight: bold;
+}
+
+
+.upperFooterContainer { 
+    height: 10%;
+    width: 100%; 
+    bottom: 6%;
+    position: absolute;
+    background-color: #2b2b2c;  
+    z-index: 1;
+  }
+  
+  .social{
+      color: white;
+      text-decoration: none;
+      float: right;
+      margin: 1%;
+      width: 5%;
+  }
+  
+  .nav{
+      color: white;
+      text-decoration: none;
+      float: right;
+      margin: 1.5%;
+      width: 15%;
+      font-size: 97%;
+  }
+  
+  .nav:hover{
+      color: #bc8c4c;;
+  }
+  
+  .bottomRightsText{
+      color: silver;
+      float: left;
+      margin: 1%;
+      width: 60%;
+      font-size: 85%;
+  }
+  
+  #lpLink{
+      text-decoration: none; 
+      color: silver;
+      font-weight: bold;
+  }
+  
+  .bottomCompanyIcon{
+      float: center;
+      margin: 1%;
+      height: 55px;
+      width: 70px;
+  }

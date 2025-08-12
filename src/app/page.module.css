@@ -1,167 +1,115 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.mainContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  background: url("/restaurant2.jpg") center/cover no-repeat;
+  background-color: black; 
+  color: white;
+  text-align: center;
+  height: 84vh;
+  width: 100%;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
+.mainRow {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.footer a {
+.mainHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.reservationButton {
+  padding: 12px 24px;
+  background-color: #bc8c4c;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.reservationButton:hover {
+  background-color: #bc8c4c;
+}
+
+/* Modal styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 }
 
-.footer img {
-  flex-shrink: 0;
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.modalTitle {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.saveButton {
+  flex: 1;
+  padding: 10px;
+  background-color: #866943;;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.saveButton:hover {
+  background-color: #58452b;
+}
+
+.cancelButton {
+  flex: 1;
+  padding: 10px;
+  background-color: #e4be8e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cancelButton:hover {
+  background-color: #d4a66c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
