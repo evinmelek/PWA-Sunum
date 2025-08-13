@@ -1,1 +1,7 @@
-{}
+{
+    "endpoint": [
+        {
+            "key": "value"
+        }
+    ]
+}
